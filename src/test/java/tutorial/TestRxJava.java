@@ -15,6 +15,7 @@ public class TestRxJava {
 
         Observable.just("Hello, world!").map(s -> s + " -Dan")
                 .subscribe(s -> System.out.println(s));
+        System.out.println("-----------------------------------");
 
         Observable.just("Hello, RX")
                 .map(s -> s.hashCode())
@@ -26,24 +27,26 @@ public class TestRxJava {
                 .subscribe(i -> System.out.println(i));
 
 
+        System.out.println("-----------------------------------");
         String[] urls = {"url1", "url2"};
         Observable.from(urls)
                 .subscribe(url -> System.out.println(url));
 
 
+        System.out.println("-----------------------------------");
         String[] urlls = {"url_a", "url_b", "url_c"};
         query("key word")//search from text
                 .flatMap(urlss -> Observable.from(urlls))
                 .flatMap(url -> getTitle(url))
                 .subscribe(title -> System.out.println(title));
 
-
-        String[] urlls_filter = {"url_a", "url_b", "url_c"};
+        System.out.println("-----------------------------------");
+        String[] urlls_filter = {"url_a", "url_b", "url_c","url_d"};
         query("key word")//search from text
                 .flatMap(urlss -> Observable.from(urlls_filter))
                 .flatMap(url -> getTitle(url))
                 .filter(title -> !title.contains("a"))
-                .take(1)
+                .take(5)
                 .doOnNext(title -> saveTitle(title))
                 .subscribeOn(Schedulers.io())
                 .subscribe(title -> System.out.println(title));
