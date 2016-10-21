@@ -6,10 +6,26 @@ package tutorial;
  */
 public class ConverterUtil {
 
-    static Converter<String, Integer> converter=(from) -> Integer.valueOf(from);
+//    static Converter<String, Integer> converter=(from) -> Integer.valueOf(from);
+
 
     public static Object convert(String from) {
-
+        Converter<String, Integer> converter=Integer::valueOf;
            return converter.convert(from);
+    }
+
+    public static Object startWith(String from)
+    {
+        Something something = new Something();
+        Converter<String, String> converter = something::startsWith;
+        return converter.convert(from);
+
+    }
+
+
+    static class Something {
+        String startsWith(String s) {
+            return String.valueOf(s.charAt(0));
+        }
     }
 }

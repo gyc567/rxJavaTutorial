@@ -17,4 +17,15 @@ class ConverterTest extends Specification {
 
 
     }
+
+    def "StartWith"() {
+        given:"  ConvertorUtil,the String 123 "
+        String from="123"
+        when:"invoke the method of ConverterUtil startWith"
+        String rt=ConverterUtil.startWith(from)
+        then:"the result shall be String 1"
+        rt.equals("1")
+
+
+    }
 }
