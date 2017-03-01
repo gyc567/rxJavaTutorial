@@ -50,17 +50,18 @@ class SortTask extends RecursiveAction {
 
     private int partition(long[] array, int lo, int hi) {
         long x = array[hi];
-        int i = lo - 1;
+        int i = lo - 1;//i will add by 1,before recurrence
         for (int j = lo; j < hi; j++) {
             if (array[j] <= x) {
                 i++;
                 swap(array, i, j);
             }
         }
-        swap(array, i + 1, hi);
-        return i + 1;
+        swap(array, i + 1, hi);//swap the low and high
+        return i + 1;//return pivot index
     }
 
+    // swap the value of array
     private void swap(long[] array, int i, int j) {
         if (i != j) {
             long temp = array[i];
@@ -74,7 +75,7 @@ class SortTask extends RecursiveAction {
     }
 }
 
-public class TestForkJoinSimple {
+public class ForkJoinTaskSample {
     private static final int NARRAY = 16; //For demo only
     long[] array = new long[NARRAY];
     Random rand = new Random();
