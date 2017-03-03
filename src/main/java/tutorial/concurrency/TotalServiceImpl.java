@@ -7,6 +7,6 @@ package tutorial.concurrency;
 public class TotalServiceImpl implements TotalService{
     @Override
     public void count() {
-        System.out.println("-----CycliBarrierTest service count-------");
+        System.out.println("-----CyclicBarrierTest service count-------");
     }
 }

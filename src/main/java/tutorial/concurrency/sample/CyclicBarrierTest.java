@@ -16,7 +16,7 @@ import java.util.concurrent.CyclicBarrier;
  *
  *
  */
-public class CycliBarrierTest {
+public class CyclicBarrierTest {
 
     // private ConcurrentHashMap result = new ConcurrentHashMap();
 
