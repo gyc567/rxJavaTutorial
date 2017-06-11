@@ -41,6 +41,8 @@ class FormulaTest extends Specification {
 
     }
 
+
+
     def "test collection in java8"()
     {
         given:"the list of String,and the instance of Formula "
